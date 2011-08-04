@@ -18,7 +18,8 @@ namespace EveControlPanelApplication
 
         private void loginPrefToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            mySqlLogin dlg = new mySqlLogin();
+            dlg.Show();
         }
 
        
