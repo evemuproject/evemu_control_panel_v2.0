@@ -13,28 +13,33 @@ using System.IO;
 
 namespace EveControlPanelApplication
 {
+   
     class DBConnect
     {
-     private MySqlConnection connection;
+    private MySqlConnection connection;
     private string server;
     private string database;
     private string uid;
     private string password;
-
+    private EveControlPanelApplication.mySqlLogin DBinfo = new EveControlPanelApplication.mySqlLogin(); 
+        
     //Constructor
    public DBConnect()
   {
        Initialize();
-        
+       
    }
 
     //Initialize values
     private void Initialize()
     {
-        server = "localhost";
-        database = "evemu";
-        uid = "evemu";
-        password = "evemu";
+
+
+
+        server = DBinfo.hostTextBox.Text;    
+        database = DBinfo.databaseTextBox.Text;
+        uid = DBinfo.usernameTextBox.Text;
+        password = DBinfo.passwordTextBox.Text;
         string connectionString;
         connectionString = "SERVER=" + server + ";" + "DATABASE=" + 
 		database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -87,9 +92,9 @@ namespace EveControlPanelApplication
     }
 
 // Example of what an insert should look like
-   /* public void Insert()
+    public void Insert()
     {
-        string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
+        string query = "INSERT INTO tabelinfo (age) VALUES('33')";
 
         //open connection
         if (this.OpenConnection() == true)
@@ -104,7 +109,7 @@ namespace EveControlPanelApplication
             this.CloseConnection();
         }
     }
-        */
+   
 
     //Backup
     public void Backup()

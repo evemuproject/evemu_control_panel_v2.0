@@ -18,19 +18,13 @@ namespace EveControlPanelApplication
         public mySqlLogin()
         {
             InitializeComponent();
-            dbConnect = new DBConnect();
+           
         }
 
         private void testConnectionButton_Click(object sender, EventArgs e)
         {
-            
-            
-        }
-                
-       
-
-      
-
-       
+             dbConnect = new DBConnect();
+             dbConnect.Insert();
+        }      
     }
 }

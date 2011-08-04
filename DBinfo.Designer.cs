@@ -209,11 +209,11 @@
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label hostaddressLabel;
         private System.Windows.Forms.Button saveCloseWindow;
-        private System.Windows.Forms.TextBox databaseTextBox;
-        private System.Windows.Forms.TextBox portTextBox;
-        private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.TextBox hostTextBox;
+        public System.Windows.Forms.TextBox databaseTextBox;
+        public System.Windows.Forms.TextBox portTextBox;
+        public System.Windows.Forms.TextBox passwordTextBox;
+        public System.Windows.Forms.TextBox usernameTextBox;
+        public System.Windows.Forms.TextBox hostTextBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button testConnectionButton;
 
