@@ -94,7 +94,7 @@ namespace EveControlPanelApplication
 // Example of what an insert should look like
     public void Insert()
     {
-        string query = "INSERT INTO tabelinfo (age) VALUES('33')";
+        string query = "INSERT INTO tabelinfo (age) VALUES('32')";
 
         //open connection
         if (this.OpenConnection() == true)

@@ -11,6 +11,7 @@ namespace EveControlPanelApplication
 {
     public partial class Main : Form
     {
+        private DBConnect dbConnect;
         public Main()
         {
             InitializeComponent();
@@ -20,6 +21,12 @@ namespace EveControlPanelApplication
         {
             mySqlLogin dlg = new mySqlLogin();
             dlg.Show();
+        }
+
+        private void testMysql_Click(object sender, EventArgs e)
+        {
+            dbConnect = new DBConnect();
+            dbConnect.Insert();
         }
 
        
