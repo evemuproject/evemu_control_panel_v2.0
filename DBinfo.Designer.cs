@@ -95,6 +95,7 @@
             this.saveCloseWindow.TabIndex = 11;
             this.saveCloseWindow.Text = "Save and Close";
             this.saveCloseWindow.UseVisualStyleBackColor = true;
+            this.saveCloseWindow.Click += new System.EventHandler(this.saveCloseWindow_Click);
             // 
             // databaseTextBox
             // 
