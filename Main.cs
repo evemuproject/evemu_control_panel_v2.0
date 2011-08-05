@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace EveControlPanelApplication
 {
@@ -15,6 +16,7 @@ namespace EveControlPanelApplication
         public Main()
         {
             InitializeComponent();
+                     
         }
 
         private void loginPrefToolStripMenuItem_Click(object sender, EventArgs e)
@@ -23,12 +25,20 @@ namespace EveControlPanelApplication
             dlg.Show();
         }
 
-        private void testMysql_Click(object sender, EventArgs e)
+        public void testMysql_Click(object sender, EventArgs e)
         {
+            
             dbConnect = new DBConnect();
-            dbConnect.Insert();
+          //  dbConnect.Insert();
+            Thread thread = new Thread(new ThreadStart(dbConnect.Insert));
+            thread.Start();
         }
 
        
+
+       
     }
+
+
+
 }
