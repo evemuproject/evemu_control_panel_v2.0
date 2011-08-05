@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DBConnection\DBconnection.cs" />
     <Compile Include="DBinfo.cs">
       <SubType>Form</SubType>
