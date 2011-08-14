@@ -14,46 +14,26 @@ using System.IO;
 namespace EveControlPanelApplication
 {
 
-    class DBConnect
+    public class DBConnect
     {
         private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
         private EveControlPanelApplication.mySqlLogin DBinfo = new EveControlPanelApplication.mySqlLogin();
 
-        //Constructor
-        public DBConnect()
-        {
-            Initialize();
-        }
-
-        //Initialize values
-        private void Initialize()
-        {
-            // We need a cleaner way of doing this, i think accessing the settings we already have through the xml file.
-            server = DBinfo.hostTextBox.Text;
-            database = DBinfo.databaseTextBox.Text;
-            uid = DBinfo.usernameTextBox.Text;
-            password = DBinfo.passwordTextBox.Text;
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
-            connection = new MySqlConnection(connectionString);
-        }
-
         //open connection to database
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
+            string[] dbcon = DBinfo.xmlLoad();
+            string connectionString = "SERVER=" + dbcon[0] + ";" + "DATABASE=" +
+            dbcon[4] + ";" + "UID=" + dbcon[1] + ";" + "PASSWORD=" + dbcon[2] + ";";
+            connection = new MySqlConnection(connectionString);
+
             try
             {
                 connection.Open();
                 return true;
             }
             catch (MySqlException ex)
-            { 
+            {
                 //When handling errors, you can your application's response based 
                 //on the error number.
                 //The two most common error numbers when connecting are as follows:
@@ -70,7 +50,11 @@ namespace EveControlPanelApplication
                         break;
                 }
                 return false;
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
 
