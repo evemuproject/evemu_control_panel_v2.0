@@ -15,19 +15,23 @@ namespace EveControlPanelApplication
 {
     public partial class mySqlLogin : Form
     {
-        private DBConnect dbConnect;
-        
-
         public mySqlLogin()
         {
             InitializeComponent();
-           
+            xmlLoad();
         }
 
         private void testConnectionButton_Click(object sender, EventArgs e)
         {
-             dbConnect = new DBConnect();
-             dbConnect.Insert();
+            DBConnect db = new DBConnect();
+            if (db.OpenConnection())
+            {
+                MessageBox.Show("It looks like it's working! Or is it...", "Connection Info");
+            }
+            else
+            {
+                MessageBox.Show("Connection Problem.");
+            }
         }
 
         private void saveCloseWindow_Click(object sender, EventArgs e)
@@ -42,15 +46,13 @@ namespace EveControlPanelApplication
             }
         }
 
-        // SaveNew will save a new file which will be decided whether it's a new one or and old one in the method above.
-
         private bool xmlSave()
         {
             // Create the information we will need.
             XmlDocument xmlDoc = new XmlDocument();
             XmlNode xmlInfo = xmlDoc.CreateXmlDeclaration("1.0", "UTF-8", null);
             xmlDoc.AppendChild(xmlInfo);
-            
+
             // Make the main Node.
             XmlNode ecpMain = xmlDoc.CreateElement("ecp_db");
             xmlDoc.AppendChild(ecpMain);
@@ -95,7 +97,7 @@ namespace EveControlPanelApplication
             {
                 // Create the directory, if it exists from before there should not be a problem...
                 Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\EvECP\\");
-                
+
                 // Create the XML, then close afterwards.
                 FileStream fs = new FileStream((Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\EvECP\\ecp_config.xml"), FileMode.Create);
                 fs.Close();
@@ -108,9 +110,46 @@ namespace EveControlPanelApplication
             }
         }
 
-        private void xmlLoad()
+        public string[] xmlLoad()
         {
-            // Not done yet..
+            string[] dbcon = new string[5];
+
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\EvECP\\ecp_config.xml"))
+            {
+                XmlTextReader xmltext = new XmlTextReader(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\EvECP\\ecp_config.xml");
+
+                int i = 0;
+                while (xmltext.Read())
+                {
+                    switch (xmltext.NodeType)
+                    {
+                        case XmlNodeType.Text:
+                            dbcon[i] = xmltext.Value;
+                            i++;
+                            break;
+                    }
+                }
+                // Close it or the app goes nuts at me...
+                xmltext.Close();
+
+                hostTextBox.Text = dbcon[0];
+                usernameTextBox.Text = dbcon[1];
+                passwordTextBox.Text = dbcon[2];
+                portTextBox.Text = dbcon[3];
+                databaseTextBox.Text = dbcon[4];
+
+                return dbcon;
+            }
+            else
+            {
+                MessageBox.Show("Could not find a XML config file saved, please create a new one.", "Error");
+                return null;
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
