@@ -51,25 +51,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBConnection\DBconnection.cs" />
-    <Compile Include="DBinfo.cs">
+    <Compile Include="src\Database Items\DBQuerys.cs" />
+    <Compile Include="src\Database Items\DBinfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DBinfo.Designer.cs">
+    <Compile Include="src\Database Items\DBinfo.Designer.cs">
       <DependentUpon>DBinfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="src\Database Items\Accounteditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="src\Database Items\Accounteditor.Designer.cs">
+      <DependentUpon>Accounteditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DBinfo.resx">
+    <Compile Include="src\Utilities\logSystem.cs" />
+    <EmbeddedResource Include="src\Database Items\DBinfo.resx">
       <DependentUpon>DBinfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="src\Database Items\Accounteditor.resx">
+      <DependentUpon>Accounteditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
