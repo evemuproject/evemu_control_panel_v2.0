@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="charEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="charEditor.Designer.cs">
+      <DependentUpon>charEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnection\DBconnection.cs" />
     <Compile Include="DBinfo.cs">
       <SubType>Form</SubType>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="charEditor.resx">
+      <DependentUpon>charEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DBinfo.resx">
       <DependentUpon>DBinfo.cs</DependentUpon>
     </EmbeddedResource>
