@@ -73,11 +73,9 @@ namespace EveControlPanelApplication
             }
         }
 
-        // Example of what an insert should look like
-        public void Insert()
+        // Simple Query: Handles INSERT, UPDATE, DELETE, ALTER and others i may have forgotten...
+        public void SQuery(string query)
         {
-            string query = "INSERT INTO tabelinfo (age) VALUES('32')";
-
             //open connection
             if (this.OpenConnection() == true)
             {
@@ -92,6 +90,24 @@ namespace EveControlPanelApplication
             }
         }
 
+        // Advanced Query: Handles Multi-SELECT and return the values as a DataTable
+        public DataTable AQuery(string query)
+        {
+            MySqlCommand myquery = new MySqlCommand(query, connection);
+
+            MySqlDataReader dataread1 = myquery.ExecuteReader();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            var datatable = new DataTable();
+            dataread1.Close();
+            adapter.SelectCommand = myquery;
+            adapter.Fill(datatable);
+            
+            // Close it
+            connection.Close();
+
+            return datatable;
+        }
 
         //Backup
         public void Backup()

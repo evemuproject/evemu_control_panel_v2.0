@@ -38,16 +38,17 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.featuresGroupBox = new System.Windows.Forms.GroupBox();
-            this.accountManagmentButton = new System.Windows.Forms.Button();
-            this.marketManagmentButton = new System.Windows.Forms.Button();
-            this.itemEditorButton = new System.Windows.Forms.Button();
-            this.stuffEditorButton = new System.Windows.Forms.Button();
-            this.databaseFunctionsButton = new System.Windows.Forms.Button();
-            this.insuranceManagerButton = new System.Windows.Forms.Button();
-            this.raceEditorButton = new System.Windows.Forms.Button();
-            this.oreEditorButton = new System.Windows.Forms.Button();
-            this.evemuXmlEditor = new System.Windows.Forms.Button();
             this.evemuServerControlButton = new System.Windows.Forms.Button();
+            this.evemuXmlEditor = new System.Windows.Forms.Button();
+            this.oreEditorButton = new System.Windows.Forms.Button();
+            this.raceEditorButton = new System.Windows.Forms.Button();
+            this.insuranceManagerButton = new System.Windows.Forms.Button();
+            this.databaseFunctionsButton = new System.Windows.Forms.Button();
+            this.stuffEditorButton = new System.Windows.Forms.Button();
+            this.itemEditorButton = new System.Windows.Forms.Button();
+            this.marketManagmentButton = new System.Windows.Forms.Button();
+            this.accountManagmentButton = new System.Windows.Forms.Button();
+            this.charEditButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.featuresGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             this.loginPrefToolStripMenuItem,
             this.clearLoginPrefToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.optionsToolStripMenuItem.Text = "MySql Login";
             // 
             // loginPrefToolStripMenuItem
@@ -97,7 +98,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // aboutToolStripMenuItem
@@ -111,11 +112,12 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // featuresGroupBox
             // 
+            this.featuresGroupBox.Controls.Add(this.charEditButton);
             this.featuresGroupBox.Controls.Add(this.evemuServerControlButton);
             this.featuresGroupBox.Controls.Add(this.evemuXmlEditor);
             this.featuresGroupBox.Controls.Add(this.oreEditorButton);
@@ -128,91 +130,10 @@
             this.featuresGroupBox.Controls.Add(this.accountManagmentButton);
             this.featuresGroupBox.Location = new System.Drawing.Point(12, 27);
             this.featuresGroupBox.Name = "featuresGroupBox";
-            this.featuresGroupBox.Size = new System.Drawing.Size(333, 220);
+            this.featuresGroupBox.Size = new System.Drawing.Size(333, 225);
             this.featuresGroupBox.TabIndex = 1;
             this.featuresGroupBox.TabStop = false;
             this.featuresGroupBox.Text = "Features";
-            // 
-            // accountManagmentButton
-            // 
-            this.accountManagmentButton.Location = new System.Drawing.Point(34, 19);
-            this.accountManagmentButton.Name = "accountManagmentButton";
-            this.accountManagmentButton.Size = new System.Drawing.Size(131, 23);
-            this.accountManagmentButton.TabIndex = 0;
-            this.accountManagmentButton.Text = "Account Managment";
-            this.accountManagmentButton.UseVisualStyleBackColor = true;
-            // 
-            // marketManagmentButton
-            // 
-            this.marketManagmentButton.Location = new System.Drawing.Point(34, 48);
-            this.marketManagmentButton.Name = "marketManagmentButton";
-            this.marketManagmentButton.Size = new System.Drawing.Size(131, 23);
-            this.marketManagmentButton.TabIndex = 2;
-            this.marketManagmentButton.Text = "Market Managment";
-            this.marketManagmentButton.UseVisualStyleBackColor = true;
-            // 
-            // itemEditorButton
-            // 
-            this.itemEditorButton.Location = new System.Drawing.Point(34, 77);
-            this.itemEditorButton.Name = "itemEditorButton";
-            this.itemEditorButton.Size = new System.Drawing.Size(131, 23);
-            this.itemEditorButton.TabIndex = 3;
-            this.itemEditorButton.Text = "Item/Ship Editor";
-            this.itemEditorButton.UseVisualStyleBackColor = true;
-            // 
-            // stuffEditorButton
-            // 
-            this.stuffEditorButton.Location = new System.Drawing.Point(171, 77);
-            this.stuffEditorButton.Name = "stuffEditorButton";
-            this.stuffEditorButton.Size = new System.Drawing.Size(131, 23);
-            this.stuffEditorButton.TabIndex = 4;
-            this.stuffEditorButton.Text = "*.Stuff Editor";
-            this.stuffEditorButton.UseVisualStyleBackColor = true;
-            // 
-            // databaseFunctionsButton
-            // 
-            this.databaseFunctionsButton.Location = new System.Drawing.Point(34, 106);
-            this.databaseFunctionsButton.Name = "databaseFunctionsButton";
-            this.databaseFunctionsButton.Size = new System.Drawing.Size(131, 23);
-            this.databaseFunctionsButton.TabIndex = 5;
-            this.databaseFunctionsButton.Text = "Database Management";
-            this.databaseFunctionsButton.UseVisualStyleBackColor = true;
-            // 
-            // insuranceManagerButton
-            // 
-            this.insuranceManagerButton.Location = new System.Drawing.Point(34, 135);
-            this.insuranceManagerButton.Name = "insuranceManagerButton";
-            this.insuranceManagerButton.Size = new System.Drawing.Size(131, 23);
-            this.insuranceManagerButton.TabIndex = 6;
-            this.insuranceManagerButton.Text = "Insurance Manager";
-            this.insuranceManagerButton.UseVisualStyleBackColor = true;
-            // 
-            // raceEditorButton
-            // 
-            this.raceEditorButton.Location = new System.Drawing.Point(34, 164);
-            this.raceEditorButton.Name = "raceEditorButton";
-            this.raceEditorButton.Size = new System.Drawing.Size(131, 23);
-            this.raceEditorButton.TabIndex = 7;
-            this.raceEditorButton.Text = "Race Editor";
-            this.raceEditorButton.UseVisualStyleBackColor = true;
-            // 
-            // oreEditorButton
-            // 
-            this.oreEditorButton.Location = new System.Drawing.Point(34, 193);
-            this.oreEditorButton.Name = "oreEditorButton";
-            this.oreEditorButton.Size = new System.Drawing.Size(131, 23);
-            this.oreEditorButton.TabIndex = 8;
-            this.oreEditorButton.Text = "Ore and Mineral Editor";
-            this.oreEditorButton.UseVisualStyleBackColor = true;
-            // 
-            // evemuXmlEditor
-            // 
-            this.evemuXmlEditor.Location = new System.Drawing.Point(171, 48);
-            this.evemuXmlEditor.Name = "evemuXmlEditor";
-            this.evemuXmlEditor.Size = new System.Drawing.Size(131, 23);
-            this.evemuXmlEditor.TabIndex = 2;
-            this.evemuXmlEditor.Text = "EveMu XML Editor";
-            this.evemuXmlEditor.UseVisualStyleBackColor = true;
             // 
             // evemuServerControlButton
             // 
@@ -223,11 +144,101 @@
             this.evemuServerControlButton.Text = "EveMu Server Control";
             this.evemuServerControlButton.UseVisualStyleBackColor = true;
             // 
+            // evemuXmlEditor
+            // 
+            this.evemuXmlEditor.Location = new System.Drawing.Point(171, 48);
+            this.evemuXmlEditor.Name = "evemuXmlEditor";
+            this.evemuXmlEditor.Size = new System.Drawing.Size(131, 23);
+            this.evemuXmlEditor.TabIndex = 2;
+            this.evemuXmlEditor.Text = "EveMu XML Editor";
+            this.evemuXmlEditor.UseVisualStyleBackColor = true;
+            // 
+            // oreEditorButton
+            // 
+            this.oreEditorButton.Location = new System.Drawing.Point(34, 193);
+            this.oreEditorButton.Name = "oreEditorButton";
+            this.oreEditorButton.Size = new System.Drawing.Size(131, 23);
+            this.oreEditorButton.TabIndex = 8;
+            this.oreEditorButton.Text = "Ore and Mineral Editor";
+            this.oreEditorButton.UseVisualStyleBackColor = true;
+            // 
+            // raceEditorButton
+            // 
+            this.raceEditorButton.Location = new System.Drawing.Point(34, 164);
+            this.raceEditorButton.Name = "raceEditorButton";
+            this.raceEditorButton.Size = new System.Drawing.Size(131, 23);
+            this.raceEditorButton.TabIndex = 7;
+            this.raceEditorButton.Text = "Race Editor";
+            this.raceEditorButton.UseVisualStyleBackColor = true;
+            // 
+            // insuranceManagerButton
+            // 
+            this.insuranceManagerButton.Location = new System.Drawing.Point(34, 135);
+            this.insuranceManagerButton.Name = "insuranceManagerButton";
+            this.insuranceManagerButton.Size = new System.Drawing.Size(131, 23);
+            this.insuranceManagerButton.TabIndex = 6;
+            this.insuranceManagerButton.Text = "Insurance Manager";
+            this.insuranceManagerButton.UseVisualStyleBackColor = true;
+            // 
+            // databaseFunctionsButton
+            // 
+            this.databaseFunctionsButton.Location = new System.Drawing.Point(34, 106);
+            this.databaseFunctionsButton.Name = "databaseFunctionsButton";
+            this.databaseFunctionsButton.Size = new System.Drawing.Size(131, 23);
+            this.databaseFunctionsButton.TabIndex = 5;
+            this.databaseFunctionsButton.Text = "Database Management";
+            this.databaseFunctionsButton.UseVisualStyleBackColor = true;
+            // 
+            // stuffEditorButton
+            // 
+            this.stuffEditorButton.Location = new System.Drawing.Point(171, 77);
+            this.stuffEditorButton.Name = "stuffEditorButton";
+            this.stuffEditorButton.Size = new System.Drawing.Size(131, 23);
+            this.stuffEditorButton.TabIndex = 4;
+            this.stuffEditorButton.Text = "*.Stuff Editor";
+            this.stuffEditorButton.UseVisualStyleBackColor = true;
+            // 
+            // itemEditorButton
+            // 
+            this.itemEditorButton.Location = new System.Drawing.Point(34, 77);
+            this.itemEditorButton.Name = "itemEditorButton";
+            this.itemEditorButton.Size = new System.Drawing.Size(131, 23);
+            this.itemEditorButton.TabIndex = 3;
+            this.itemEditorButton.Text = "Item/Ship Editor";
+            this.itemEditorButton.UseVisualStyleBackColor = true;
+            // 
+            // marketManagmentButton
+            // 
+            this.marketManagmentButton.Location = new System.Drawing.Point(34, 48);
+            this.marketManagmentButton.Name = "marketManagmentButton";
+            this.marketManagmentButton.Size = new System.Drawing.Size(131, 23);
+            this.marketManagmentButton.TabIndex = 2;
+            this.marketManagmentButton.Text = "Market Managment";
+            this.marketManagmentButton.UseVisualStyleBackColor = true;
+            // 
+            // accountManagmentButton
+            // 
+            this.accountManagmentButton.Location = new System.Drawing.Point(34, 19);
+            this.accountManagmentButton.Name = "accountManagmentButton";
+            this.accountManagmentButton.Size = new System.Drawing.Size(131, 23);
+            this.accountManagmentButton.TabIndex = 0;
+            this.accountManagmentButton.Text = "Account Managment";
+            this.accountManagmentButton.UseVisualStyleBackColor = true;
+            // 
+            // charEditButton
+            // 
+            this.charEditButton.Location = new System.Drawing.Point(171, 106);
+            this.charEditButton.Name = "charEditButton";
+            this.charEditButton.Size = new System.Drawing.Size(131, 23);
+            this.charEditButton.TabIndex = 10;
+            this.charEditButton.Text = "Character Editor";
+            this.charEditButton.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 259);
+            this.ClientSize = new System.Drawing.Size(380, 332);
             this.Controls.Add(this.featuresGroupBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -262,6 +273,7 @@
         private System.Windows.Forms.Button insuranceManagerButton;
         private System.Windows.Forms.Button databaseFunctionsButton;
         private System.Windows.Forms.Button stuffEditorButton;
+        private System.Windows.Forms.Button charEditButton;
     }
 }
 
