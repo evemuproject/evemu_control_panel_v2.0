@@ -38,6 +38,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.featuresGroupBox = new System.Windows.Forms.GroupBox();
+            this.charEditButton = new System.Windows.Forms.Button();
             this.evemuServerControlButton = new System.Windows.Forms.Button();
             this.evemuXmlEditor = new System.Windows.Forms.Button();
             this.oreEditorButton = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.itemEditorButton = new System.Windows.Forms.Button();
             this.marketManagmentButton = new System.Windows.Forms.Button();
             this.accountManagmentButton = new System.Windows.Forms.Button();
-            this.charEditButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.featuresGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +79,7 @@
             this.loginPrefToolStripMenuItem,
             this.clearLoginPrefToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.optionsToolStripMenuItem.Text = "MySql Login";
             // 
             // loginPrefToolStripMenuItem
@@ -98,7 +98,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // aboutToolStripMenuItem
@@ -112,7 +112,7 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // featuresGroupBox
@@ -134,6 +134,15 @@
             this.featuresGroupBox.TabIndex = 1;
             this.featuresGroupBox.TabStop = false;
             this.featuresGroupBox.Text = "Features";
+            // 
+            // charEditButton
+            // 
+            this.charEditButton.Location = new System.Drawing.Point(171, 106);
+            this.charEditButton.Name = "charEditButton";
+            this.charEditButton.Size = new System.Drawing.Size(131, 23);
+            this.charEditButton.TabIndex = 10;
+            this.charEditButton.Text = "Character Editor";
+            this.charEditButton.UseVisualStyleBackColor = true;
             // 
             // evemuServerControlButton
             // 
@@ -224,15 +233,7 @@
             this.accountManagmentButton.TabIndex = 0;
             this.accountManagmentButton.Text = "Account Managment";
             this.accountManagmentButton.UseVisualStyleBackColor = true;
-            // 
-            // charEditButton
-            // 
-            this.charEditButton.Location = new System.Drawing.Point(171, 106);
-            this.charEditButton.Name = "charEditButton";
-            this.charEditButton.Size = new System.Drawing.Size(131, 23);
-            this.charEditButton.TabIndex = 10;
-            this.charEditButton.Text = "Character Editor";
-            this.charEditButton.UseVisualStyleBackColor = true;
+            this.accountManagmentButton.Click += new System.EventHandler(this.accountManagmentButton_Click);
             // 
             // Main
             // 

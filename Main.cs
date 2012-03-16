@@ -21,5 +21,11 @@ namespace EveControlPanelApplication
             mySqlLogin dlg = new mySqlLogin();
             dlg.Show();
         }
+
+        private void accountManagmentButton_Click(object sender, EventArgs e)
+        {
+            acctEditForm acctEdit = new acctEditForm();
+            acctEdit.Show();
+        }
     }
 }
