@@ -39,7 +39,7 @@ namespace EveControlPanelApplication
                 DBConnect db = new DBConnect();
                 try
                 {
-                    db.AQuery("INSERT INTO account (accountName, password) VALUES ('" + usernameTX.Text + "', '" + CalculateMD5Hash(passwordTX.Text) + "')");
+                    db.SQuery("INSERT INTO account (accountName, password) VALUES ('" + usernameTX.Text + "', '" + CalculateMD5Hash(passwordTX.Text) + "')");
                 }
                 catch (InvalidExpressionException)
                 {
