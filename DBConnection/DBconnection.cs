@@ -93,32 +93,38 @@ namespace EveControlPanelApplication
         // Advanced Query: Handles Multi-SELECT and return the values as a DataTable
         public DataTable AQuery(string query)
         {
-            MySqlCommand myquery = new MySqlCommand(query, connection);
-
-            try
+            if (OpenConnection() == true)
             {
-                connection.Open();
-                MySqlDataReader dataread1 = myquery.ExecuteReader();
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlCommand myquery = new MySqlCommand(query, connection);
 
-                var datatable = new DataTable();
-                dataread1.Close();
-                adapter.SelectCommand = myquery;
-                adapter.Fill(datatable);
+                try
+                {
+                    MySqlDataReader dataread1 = myquery.ExecuteReader();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                // Close it
-                connection.Close();
+                    var datatable = new DataTable();
+                    dataread1.Close();
+                    adapter.SelectCommand = myquery;
+                    adapter.Fill(datatable);
 
-                return datatable;
+                    // Close it
+                    connection.Close();
+
+                    return datatable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+
+                return null;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                return null;
             }
-
-            
-
-            return null;
         }
 
         //Backup

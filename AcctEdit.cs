@@ -24,10 +24,7 @@ namespace EveControlPanelApplication
                 try
                 {
                     db.SQuery("INSERT INTO account (accountName, password) VALUES ('" + usernameTX.Text + "', '" + passwordTX.Text + "')");
-                }
-                catch (InvalidExpressionException)
-                {
-                    MessageBox.Show("Error: You might not have installed MySql, please make you have done so.", "Error");
+                    MessageBox.Show("Account '" + usernameTX.Text + "' has been created. Have fun!", "Yay!");
                 }
                 catch (Exception ex)
                 {
@@ -38,13 +35,13 @@ namespace EveControlPanelApplication
 
         private void usernameFindTX_TextChanged(object sender, EventArgs e)
         {
+            usernameListBox.Items.Clear();
             DBConnect db = new DBConnect();
             try
             {
-                DataTable data = db.AQuery("SELECT accountName FROM account WHERE accountName='" + usernameFindTX.Text + "*'");
-                foreach (DataRow row in data.Rows)
+               foreach (DataRow row in db.AQuery("SELECT accountName FROM account WHERE(accountName like \'" + usernameFindTX.Text + "%\')").Rows)
                 {
-                    usernameCheckedListBox.Items.Add(row);
+                    usernameListBox.Items.Add(row[0].ToString());
                 }
             }
             catch (Exception ex)
