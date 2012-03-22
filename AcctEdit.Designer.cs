@@ -157,6 +157,7 @@
             this.usernameFindTX.Name = "usernameFindTX";
             this.usernameFindTX.Size = new System.Drawing.Size(100, 20);
             this.usernameFindTX.TabIndex = 3;
+            this.usernameFindTX.TextChanged += new System.EventHandler(this.usernameFindTX_TextChanged);
             // 
             // acctEditForm
             // 

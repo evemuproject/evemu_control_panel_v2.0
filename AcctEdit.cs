@@ -16,22 +16,6 @@ namespace EveControlPanelApplication
             InitializeComponent();
         }
 
-        public static string CalculateMD5Hash(string strInput)
-        {
-            // Saved from the old DB editor, I should try and actually work out how it really works one of these days..
-
-            System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(strInput);
-            byte[] hash = md5.ComputeHash(inputBytes);
-
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("x2"));
-            }
-            return sb.ToString();
-        }
-
         private void createAccountButton_Click(object sender, EventArgs e)
         {
             if (usernameTX.Text != "" && passwordTX.Text != "")
@@ -39,7 +23,7 @@ namespace EveControlPanelApplication
                 DBConnect db = new DBConnect();
                 try
                 {
-                    db.SQuery("INSERT INTO account (accountName, password) VALUES ('" + usernameTX.Text + "', '" + CalculateMD5Hash(passwordTX.Text) + "')");
+                    db.SQuery("INSERT INTO account (accountName, password) VALUES ('" + usernameTX.Text + "', '" + passwordTX.Text + "')");
                 }
                 catch (InvalidExpressionException)
                 {
@@ -49,6 +33,23 @@ namespace EveControlPanelApplication
                 {
                     MessageBox.Show("Error: " + ex, "Error");
                 }
+            }
+        }
+
+        private void usernameFindTX_TextChanged(object sender, EventArgs e)
+        {
+            DBConnect db = new DBConnect();
+            try
+            {
+                DataTable data = db.AQuery("SELECT accountName FROM account WHERE accountName='" + usernameFindTX.Text + "*'");
+                foreach (DataRow row in data.Rows)
+                {
+                    usernameCheckedListBox.Items.Add(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -95,18 +95,36 @@ namespace EveControlPanelApplication
         {
             MySqlCommand myquery = new MySqlCommand(query, connection);
 
-            MySqlDataReader dataread1 = myquery.ExecuteReader();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            if (connection.State != ConnectionState.Open)
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("MYSql error: " + ex);
+                }
+            }
+            else if (connection.State == ConnectionState.Open)
+            {
+                MySqlDataReader dataread1 = myquery.ExecuteReader();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            var datatable = new DataTable();
-            dataread1.Close();
-            adapter.SelectCommand = myquery;
-            adapter.Fill(datatable);
+                var datatable = new DataTable();
+                dataread1.Close();
+                adapter.SelectCommand = myquery;
+                adapter.Fill(datatable);
+
+                // Close it
+                connection.Close();
+
+                return datatable;
+            }
+
             
-            // Close it
-            connection.Close();
 
-            return datatable;
+            return null;
         }
 
         //Backup
