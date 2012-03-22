@@ -27,5 +27,15 @@ namespace EveControlPanelApplication
             acctEditForm acctEdit = new acctEditForm();
             acctEdit.Show();
         }
+
+        private void databaseFunctionsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

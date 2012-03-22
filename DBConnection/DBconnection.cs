@@ -95,19 +95,9 @@ namespace EveControlPanelApplication
         {
             MySqlCommand myquery = new MySqlCommand(query, connection);
 
-            if (connection.State != ConnectionState.Open)
+            try
             {
-                try
-                {
-                    connection.Open();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("MYSql error: " + ex);
-                }
-            }
-            else if (connection.State == ConnectionState.Open)
-            {
+                connection.Open();
                 MySqlDataReader dataread1 = myquery.ExecuteReader();
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
 
@@ -120,6 +110,10 @@ namespace EveControlPanelApplication
                 connection.Close();
 
                 return datatable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
             

@@ -79,7 +79,7 @@
             this.loginPrefToolStripMenuItem,
             this.clearLoginPrefToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.optionsToolStripMenuItem.Text = "MySql Login";
             // 
             // loginPrefToolStripMenuItem
@@ -98,7 +98,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // aboutToolStripMenuItem
@@ -114,6 +114,7 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // featuresGroupBox
             // 
@@ -137,7 +138,7 @@
             // 
             // charEditButton
             // 
-            this.charEditButton.Location = new System.Drawing.Point(171, 106);
+            this.charEditButton.Location = new System.Drawing.Point(34, 48);
             this.charEditButton.Name = "charEditButton";
             this.charEditButton.Size = new System.Drawing.Size(131, 23);
             this.charEditButton.TabIndex = 10;
@@ -197,6 +198,7 @@
             this.databaseFunctionsButton.TabIndex = 5;
             this.databaseFunctionsButton.Text = "Database Management";
             this.databaseFunctionsButton.UseVisualStyleBackColor = true;
+            this.databaseFunctionsButton.Click += new System.EventHandler(this.databaseFunctionsButton_Click);
             // 
             // stuffEditorButton
             // 
@@ -218,7 +220,7 @@
             // 
             // marketManagmentButton
             // 
-            this.marketManagmentButton.Location = new System.Drawing.Point(34, 48);
+            this.marketManagmentButton.Location = new System.Drawing.Point(171, 106);
             this.marketManagmentButton.Name = "marketManagmentButton";
             this.marketManagmentButton.Size = new System.Drawing.Size(131, 23);
             this.marketManagmentButton.TabIndex = 2;
