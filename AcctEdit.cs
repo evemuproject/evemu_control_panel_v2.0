@@ -11,6 +11,10 @@ namespace EveControlPanelApplication
 {
     public partial class acctEditForm : Form
     {
+        //roles list
+        private const long DEV = 5003499186008621056L;
+        private const long PLAYER = 6917529027641081856L;
+
         public acctEditForm()
         {
             InitializeComponent();
@@ -22,7 +26,18 @@ namespace EveControlPanelApplication
             {
                 try
                 {
-                    DBConnect.SQuery("INSERT INTO account (accountName, password) VALUES ('" + usernameTX.Text + "', '" + passwordTX.Text + "')");
+                    if (comboBox1.SelectedIndex == 0) //Dev account
+                    {
+                        DBConnect.SQuery("INSERT INTO acount (accountID, accountName, role, password, banned, online)" +
+                                            "VALUES (NULL, '" + usernameTX.Text + "', " + DEV + ", '" + passwordTX.Text + "', 0, 0)");
+                        MessageBox.Show("Dev account added!");
+                    }
+                    else if (comboBox1.SelectedIndex == 1) //Player account
+                    {
+                        DBConnect.SQuery("INSERT INTO account (accountID, accountName, role, password, banned, online)" +
+                                            "VALUES (NULL, '" + usernameTX.Text + "', " + PLAYER + ", '" + passwordTX.Text + "', 0, 0)");
+                        MessageBox.Show("Player account added!");
+                    }
                 }
                 catch (InvalidExpressionException)
                 {
@@ -52,6 +67,11 @@ namespace EveControlPanelApplication
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,24 +30,26 @@
         {
             this.createAccountButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.passwordTX = new System.Windows.Forms.TextBox();
             this.passwordL = new System.Windows.Forms.Label();
             this.usernameL = new System.Windows.Forms.Label();
             this.usernameTX = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.usernameListBox = new System.Windows.Forms.ListBox();
             this.search = new System.Windows.Forms.Button();
             this.delCheckedButton = new System.Windows.Forms.Button();
             this.editAcctButton = new System.Windows.Forms.Button();
             this.usernameFindL = new System.Windows.Forms.Label();
             this.usernameFindTX = new System.Windows.Forms.TextBox();
-            this.usernameListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // createAccountButton
             // 
-            this.createAccountButton.Location = new System.Drawing.Point(20, 97);
+            this.createAccountButton.Location = new System.Drawing.Point(19, 160);
             this.createAccountButton.Name = "createAccountButton";
             this.createAccountButton.Size = new System.Drawing.Size(75, 23);
             this.createAccountButton.TabIndex = 0;
@@ -57,6 +59,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.passwordTX);
             this.groupBox1.Controls.Add(this.createAccountButton);
             this.groupBox1.Controls.Add(this.passwordL);
@@ -64,10 +68,26 @@
             this.groupBox1.Controls.Add(this.usernameTX);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(112, 133);
+            this.groupBox1.Size = new System.Drawing.Size(112, 195);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New Account";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "Dev";
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Dev",
+            "Player"});
+            this.comboBox1.Location = new System.Drawing.Point(6, 110);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 21);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.Text = "Dev";
+            this.comboBox1.ValueMember = "Dev";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // passwordTX
             // 
@@ -79,7 +99,7 @@
             // passwordL
             // 
             this.passwordL.AutoSize = true;
-            this.passwordL.Location = new System.Drawing.Point(29, 55);
+            this.passwordL.Location = new System.Drawing.Point(27, 54);
             this.passwordL.Name = "passwordL";
             this.passwordL.Size = new System.Drawing.Size(56, 13);
             this.passwordL.TabIndex = 3;
@@ -115,6 +135,16 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Edit Accounts";
+            // 
+            // usernameListBox
+            // 
+            this.usernameListBox.FormattingEnabled = true;
+            this.usernameListBox.Items.AddRange(new object[] {
+            "User..."});
+            this.usernameListBox.Location = new System.Drawing.Point(9, 49);
+            this.usernameListBox.Name = "usernameListBox";
+            this.usernameListBox.Size = new System.Drawing.Size(193, 134);
+            this.usernameListBox.TabIndex = 9;
             // 
             // search
             // 
@@ -160,15 +190,15 @@
             this.usernameFindTX.Size = new System.Drawing.Size(133, 20);
             this.usernameFindTX.TabIndex = 8;
             // 
-            // usernameListBox
+            // label1
             // 
-            this.usernameListBox.FormattingEnabled = true;
-            this.usernameListBox.Items.AddRange(new object[] {
-            "User..."});
-            this.usernameListBox.Location = new System.Drawing.Point(9, 49);
-            this.usernameListBox.Name = "usernameListBox";
-            this.usernameListBox.Size = new System.Drawing.Size(193, 134);
-            this.usernameListBox.TabIndex = 9;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(38, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Role";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // acctEditForm
             // 
@@ -203,5 +233,7 @@
         private System.Windows.Forms.TextBox usernameFindTX;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.ListBox usernameListBox;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
