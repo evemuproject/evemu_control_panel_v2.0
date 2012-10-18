@@ -20,10 +20,9 @@ namespace EveControlPanelApplication
         {
             if (usernameTX.Text != "" && passwordTX.Text != "")
             {
-                DBConnect db = new DBConnect();
                 try
                 {
-                    db.SQuery("INSERT INTO account (accountName, password) VALUES ('" + usernameTX.Text + "', '" + passwordTX.Text + "')");
+                    DBConnect.SQuery("INSERT INTO account (accountName, password) VALUES ('" + usernameTX.Text + "', '" + passwordTX.Text + "')");
                 }
                 catch (InvalidExpressionException)
                 {
@@ -36,15 +35,17 @@ namespace EveControlPanelApplication
             }
         }
 
-        private void usernameFindTX_TextChanged(object sender, EventArgs e)
+        private void search_Click(object sender, EventArgs e)
         {
-            DBConnect db = new DBConnect();
             try
             {
-                DataTable data = db.AQuery("SELECT accountName FROM account WHERE accountName='" + usernameFindTX.Text + "*'");
+                DataTable data = new DataTable();
+                data = DBConnect.AQuery("SELECT accountName FROM account WHERE accountName='" + usernameFindTX.Text + "*'");
+                Console.WriteLine(data.Rows.ToString());
                 foreach (DataRow row in data.Rows)
                 {
-                    usernameCheckedListBox.Items.Add(row);
+                    Console.WriteLine(row);
+                    usernameListBox.Items.Add(row);
                 }
             }
             catch (Exception ex)

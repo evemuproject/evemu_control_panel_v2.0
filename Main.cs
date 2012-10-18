@@ -28,6 +28,16 @@ namespace EveControlPanelApplication
             acctEdit.Show();
         }
 
+        private void charEditButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void itemEditorButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void databaseFunctionsButton_Click(object sender, EventArgs e)
         {
 

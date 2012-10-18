@@ -34,12 +34,13 @@
             this.passwordL = new System.Windows.Forms.Label();
             this.usernameL = new System.Windows.Forms.Label();
             this.usernameTX = new System.Windows.Forms.TextBox();
-            this.usernameCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.search = new System.Windows.Forms.Button();
             this.delCheckedButton = new System.Windows.Forms.Button();
             this.editAcctButton = new System.Windows.Forms.Button();
             this.usernameFindL = new System.Windows.Forms.Label();
             this.usernameFindTX = new System.Windows.Forms.TextBox();
+            this.usernameListBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -100,33 +101,34 @@
             this.usernameTX.Size = new System.Drawing.Size(100, 20);
             this.usernameTX.TabIndex = 1;
             // 
-            // usernameCheckedListBox
-            // 
-            this.usernameCheckedListBox.FormattingEnabled = true;
-            this.usernameCheckedListBox.Items.AddRange(new object[] {
-            "Type a partial username"});
-            this.usernameCheckedListBox.Location = new System.Drawing.Point(6, 49);
-            this.usernameCheckedListBox.Name = "usernameCheckedListBox";
-            this.usernameCheckedListBox.Size = new System.Drawing.Size(138, 139);
-            this.usernameCheckedListBox.TabIndex = 2;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.usernameListBox);
+            this.groupBox2.Controls.Add(this.search);
             this.groupBox2.Controls.Add(this.delCheckedButton);
             this.groupBox2.Controls.Add(this.editAcctButton);
             this.groupBox2.Controls.Add(this.usernameFindL);
             this.groupBox2.Controls.Add(this.usernameFindTX);
-            this.groupBox2.Controls.Add(this.usernameCheckedListBox);
             this.groupBox2.Location = new System.Drawing.Point(130, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(234, 195);
+            this.groupBox2.Size = new System.Drawing.Size(290, 195);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Edit Accounts";
             // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(209, 23);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(75, 23);
+            this.search.TabIndex = 7;
+            this.search.Text = "Search";
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.search_Click);
+            // 
             // delCheckedButton
             // 
-            this.delCheckedButton.Location = new System.Drawing.Point(150, 78);
+            this.delCheckedButton.Location = new System.Drawing.Point(208, 78);
             this.delCheckedButton.Name = "delCheckedButton";
             this.delCheckedButton.Size = new System.Drawing.Size(75, 23);
             this.delCheckedButton.TabIndex = 6;
@@ -135,7 +137,7 @@
             // 
             // editAcctButton
             // 
-            this.editAcctButton.Location = new System.Drawing.Point(150, 49);
+            this.editAcctButton.Location = new System.Drawing.Point(209, 49);
             this.editAcctButton.Name = "editAcctButton";
             this.editAcctButton.Size = new System.Drawing.Size(75, 23);
             this.editAcctButton.TabIndex = 5;
@@ -153,19 +155,29 @@
             // 
             // usernameFindTX
             // 
-            this.usernameFindTX.Location = new System.Drawing.Point(70, 23);
+            this.usernameFindTX.Location = new System.Drawing.Point(70, 26);
             this.usernameFindTX.Name = "usernameFindTX";
-            this.usernameFindTX.Size = new System.Drawing.Size(100, 20);
-            this.usernameFindTX.TabIndex = 3;
-            this.usernameFindTX.TextChanged += new System.EventHandler(this.usernameFindTX_TextChanged);
+            this.usernameFindTX.Size = new System.Drawing.Size(133, 20);
+            this.usernameFindTX.TabIndex = 8;
+            // 
+            // usernameListBox
+            // 
+            this.usernameListBox.FormattingEnabled = true;
+            this.usernameListBox.Items.AddRange(new object[] {
+            "User..."});
+            this.usernameListBox.Location = new System.Drawing.Point(9, 49);
+            this.usernameListBox.Name = "usernameListBox";
+            this.usernameListBox.Size = new System.Drawing.Size(193, 134);
+            this.usernameListBox.TabIndex = 9;
             // 
             // acctEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 214);
+            this.ClientSize = new System.Drawing.Size(425, 214);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "acctEditForm";
             this.Text = "Account Editor";
             this.groupBox1.ResumeLayout(false);
@@ -184,11 +196,12 @@
         private System.Windows.Forms.Label passwordL;
         private System.Windows.Forms.Label usernameL;
         private System.Windows.Forms.TextBox usernameTX;
-        private System.Windows.Forms.CheckedListBox usernameCheckedListBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button delCheckedButton;
         private System.Windows.Forms.Button editAcctButton;
         private System.Windows.Forms.Label usernameFindL;
         private System.Windows.Forms.TextBox usernameFindTX;
+        private System.Windows.Forms.Button search;
+        private System.Windows.Forms.ListBox usernameListBox;
     }
 }

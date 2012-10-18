@@ -23,10 +23,11 @@ namespace EveControlPanelApplication
 
         private void testConnectionButton_Click(object sender, EventArgs e)
         {
-            DBConnect db = new DBConnect();
-            if (db.OpenConnection())
+            DBConnect.OpenConnection();
+            if (DBConnect.isConnectionOpen)
             {
                 MessageBox.Show("It looks like it's working! Or is it...", "Connection Info");
+                DBConnect.CloseConnection();
             }
             else
             {
