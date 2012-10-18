@@ -22,17 +22,17 @@ namespace EveControlPanelApplication
 
         private void createAccountButton_Click(object sender, EventArgs e)
         {
-            if (usernameTX.Text != "" && passwordTX.Text != "")
+            if (usernameTX.Text != "" && passwordTX.Text != "" && userList.SelectedValue != "")
             {
                 try
                 {
-                    if (comboBox1.SelectedIndex == 0) //Dev account
+                    if (userList.SelectedIndex == 0) //Dev account
                     {
-                        DBConnect.SQuery("INSERT INTO acount (accountID, accountName, role, password, banned, online)" +
+                        DBConnect.SQuery("INSERT INTO account (accountID, accountName, role, password, banned, online)" +
                                             "VALUES (NULL, '" + usernameTX.Text + "', " + DEV + ", '" + passwordTX.Text + "', 0, 0)");
                         MessageBox.Show("Dev account added!");
                     }
-                    else if (comboBox1.SelectedIndex == 1) //Player account
+                    else if (userList.SelectedIndex == 1) //Player account
                     {
                         DBConnect.SQuery("INSERT INTO account (accountID, accountName, role, password, banned, online)" +
                                             "VALUES (NULL, '" + usernameTX.Text + "', " + PLAYER + ", '" + passwordTX.Text + "', 0, 0)");
@@ -45,7 +45,7 @@ namespace EveControlPanelApplication
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex, "Error");
+                    MessageBox.Show("Error: " + ex.Message, "Error");
                 }
             }
         }
@@ -55,13 +55,10 @@ namespace EveControlPanelApplication
             try
             {
                 DataTable data = new DataTable();
-                data = DBConnect.AQuery("SELECT accountName FROM account WHERE accountName='" + usernameFindTX.Text + "*'");
-                Console.WriteLine(data.Rows.ToString());
-                foreach (DataRow row in data.Rows)
-                {
-                    Console.WriteLine(row);
-                    usernameListBox.Items.Add(row);
-                }
+                data = DBConnect.AQuery("SELECT accountID, accountName, role, banned, logonCount `online` FROM account WHERE accountName like '" + usernameFindTX.Text + "%';");
+               
+                userDataList.DataSource = data;
+                
             }
             catch (Exception ex)
             {
@@ -69,9 +66,18 @@ namespace EveControlPanelApplication
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void delCheckedButton_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+              
+                DBConnect.SQuery("DELETE FROM account WHERE accountName='" + userDataList.CurrentCell.Value + "'");
+                userDataList.Rows.Remove(userDataList.CurrentRow);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
