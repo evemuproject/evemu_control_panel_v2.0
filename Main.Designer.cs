@@ -60,7 +60,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(380, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(352, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -112,7 +112,7 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -138,6 +138,7 @@
             // 
             // charEditButton
             // 
+            this.charEditButton.Enabled = false;
             this.charEditButton.Location = new System.Drawing.Point(34, 48);
             this.charEditButton.Name = "charEditButton";
             this.charEditButton.Size = new System.Drawing.Size(131, 23);
@@ -147,6 +148,7 @@
             // 
             // evemuServerControlButton
             // 
+            this.evemuServerControlButton.Enabled = false;
             this.evemuServerControlButton.Location = new System.Drawing.Point(171, 19);
             this.evemuServerControlButton.Name = "evemuServerControlButton";
             this.evemuServerControlButton.Size = new System.Drawing.Size(131, 23);
@@ -156,6 +158,7 @@
             // 
             // evemuXmlEditor
             // 
+            this.evemuXmlEditor.Enabled = false;
             this.evemuXmlEditor.Location = new System.Drawing.Point(171, 48);
             this.evemuXmlEditor.Name = "evemuXmlEditor";
             this.evemuXmlEditor.Size = new System.Drawing.Size(131, 23);
@@ -165,6 +168,7 @@
             // 
             // oreEditorButton
             // 
+            this.oreEditorButton.Enabled = false;
             this.oreEditorButton.Location = new System.Drawing.Point(34, 193);
             this.oreEditorButton.Name = "oreEditorButton";
             this.oreEditorButton.Size = new System.Drawing.Size(131, 23);
@@ -174,6 +178,7 @@
             // 
             // raceEditorButton
             // 
+            this.raceEditorButton.Enabled = false;
             this.raceEditorButton.Location = new System.Drawing.Point(34, 164);
             this.raceEditorButton.Name = "raceEditorButton";
             this.raceEditorButton.Size = new System.Drawing.Size(131, 23);
@@ -183,6 +188,7 @@
             // 
             // insuranceManagerButton
             // 
+            this.insuranceManagerButton.Enabled = false;
             this.insuranceManagerButton.Location = new System.Drawing.Point(34, 135);
             this.insuranceManagerButton.Name = "insuranceManagerButton";
             this.insuranceManagerButton.Size = new System.Drawing.Size(131, 23);
@@ -192,6 +198,7 @@
             // 
             // databaseFunctionsButton
             // 
+            this.databaseFunctionsButton.Enabled = false;
             this.databaseFunctionsButton.Location = new System.Drawing.Point(34, 106);
             this.databaseFunctionsButton.Name = "databaseFunctionsButton";
             this.databaseFunctionsButton.Size = new System.Drawing.Size(131, 23);
@@ -202,6 +209,7 @@
             // 
             // stuffEditorButton
             // 
+            this.stuffEditorButton.Enabled = false;
             this.stuffEditorButton.Location = new System.Drawing.Point(171, 77);
             this.stuffEditorButton.Name = "stuffEditorButton";
             this.stuffEditorButton.Size = new System.Drawing.Size(131, 23);
@@ -211,6 +219,7 @@
             // 
             // itemEditorButton
             // 
+            this.itemEditorButton.Enabled = false;
             this.itemEditorButton.Location = new System.Drawing.Point(34, 77);
             this.itemEditorButton.Name = "itemEditorButton";
             this.itemEditorButton.Size = new System.Drawing.Size(131, 23);
@@ -220,6 +229,7 @@
             // 
             // marketManagmentButton
             // 
+            this.marketManagmentButton.Enabled = false;
             this.marketManagmentButton.Location = new System.Drawing.Point(171, 106);
             this.marketManagmentButton.Name = "marketManagmentButton";
             this.marketManagmentButton.Size = new System.Drawing.Size(131, 23);
@@ -241,7 +251,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 332);
+            this.ClientSize = new System.Drawing.Size(352, 257);
             this.Controls.Add(this.featuresGroupBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
