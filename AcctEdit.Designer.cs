@@ -42,7 +42,11 @@
             this.editAcctButton = new System.Windows.Forms.Button();
             this.usernameFindL = new System.Windows.Forms.Label();
             this.usernameFindTX = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
             this.userDataList = new System.Windows.Forms.DataGridView();
+=======
+            this.usernameListBox = new System.Windows.Forms.ListBox();
+>>>>>>> d1ff5f9a75006568b8f3a91911990d36650b45bf
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userDataList)).BeginInit();
@@ -133,8 +137,12 @@
             // 
             // groupBox2
             // 
+<<<<<<< HEAD
             this.groupBox2.Controls.Add(this.userDataList);
             this.groupBox2.Controls.Add(this.search);
+=======
+            this.groupBox2.Controls.Add(this.usernameListBox);
+>>>>>>> d1ff5f9a75006568b8f3a91911990d36650b45bf
             this.groupBox2.Controls.Add(this.delCheckedButton);
             this.groupBox2.Controls.Add(this.editAcctButton);
             this.groupBox2.Controls.Add(this.usernameFindL);
@@ -202,6 +210,14 @@
             this.userDataList.Size = new System.Drawing.Size(562, 269);
             this.userDataList.TabIndex = 9;
             // 
+            // usernameListBox
+            // 
+            this.usernameListBox.FormattingEnabled = true;
+            this.usernameListBox.Location = new System.Drawing.Point(6, 49);
+            this.usernameListBox.Name = "usernameListBox";
+            this.usernameListBox.Size = new System.Drawing.Size(138, 134);
+            this.usernameListBox.TabIndex = 7;
+            // 
             // acctEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,9 +250,13 @@
         private System.Windows.Forms.Button editAcctButton;
         private System.Windows.Forms.Label usernameFindL;
         private System.Windows.Forms.TextBox usernameFindTX;
+<<<<<<< HEAD
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.ComboBox userList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView userDataList;
+=======
+        private System.Windows.Forms.ListBox usernameListBox;
+>>>>>>> d1ff5f9a75006568b8f3a91911990d36650b45bf
     }
 }

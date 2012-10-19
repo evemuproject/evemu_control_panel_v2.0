@@ -26,6 +26,7 @@ namespace EveControlPanelApplication
             {
                 try
                 {
+<<<<<<< HEAD
                     if (userList.SelectedIndex == 0) //Dev account
                     {
                         DBConnect.SQuery("INSERT INTO account (accountID, accountName, role, password, banned, online)" +
@@ -42,6 +43,10 @@ namespace EveControlPanelApplication
                 catch (InvalidExpressionException)
                 {
                     MessageBox.Show("Error: You might not have installed MySql, please make you have done so.", "Error");
+=======
+                    db.SQuery("INSERT INTO account (accountName, password) VALUES ('" + usernameTX.Text + "', '" + passwordTX.Text + "')");
+                    MessageBox.Show("Account '" + usernameTX.Text + "' has been created. Have fun!", "Yay!");
+>>>>>>> d1ff5f9a75006568b8f3a91911990d36650b45bf
                 }
                 catch (Exception ex)
                 {
@@ -52,6 +57,7 @@ namespace EveControlPanelApplication
 
         private void search_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             try
             {
                 DataTable data = new DataTable();
@@ -73,6 +79,16 @@ namespace EveControlPanelApplication
               
                 DBConnect.SQuery("DELETE FROM account WHERE accountName='" + userDataList.CurrentCell.Value + "'");
                 userDataList.Rows.Remove(userDataList.CurrentRow);
+=======
+            usernameListBox.Items.Clear();
+            DBConnect db = new DBConnect();
+            try
+            {
+               foreach (DataRow row in db.AQuery("SELECT accountName FROM account WHERE(accountName like \'" + usernameFindTX.Text + "%\')").Rows)
+                {
+                    usernameListBox.Items.Add(row[0].ToString());
+                }
+>>>>>>> d1ff5f9a75006568b8f3a91911990d36650b45bf
             }
             catch (Exception ex)
             {
