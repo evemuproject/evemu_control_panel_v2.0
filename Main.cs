@@ -45,7 +45,7 @@ namespace EveControlPanelApplication
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("EveCP Copyright by EveProject\nProjectpage: https://github.com/evemuproject\nWebsite: http://evemu.org\n\nDevelopers:\n\nReveMu\nHurracane\nMurdockGT\nGooMan", "About EveCP", MessageBoxButtons.OK);
         }
     }
 }

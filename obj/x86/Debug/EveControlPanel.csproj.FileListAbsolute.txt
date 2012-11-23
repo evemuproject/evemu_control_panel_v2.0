@@ -10,3 +10,15 @@ C:\evemu_control_panel_v2.0\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\evemu_control_panel_v2.0\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\evemu_control_panel_v2.0\obj\x86\Debug\EveControlPanel.exe
 C:\evemu_control_panel_v2.0\obj\x86\Debug\EveControlPanel.pdb
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\obj\x86\Debug\EveControlPanel.exe
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\obj\x86\Debug\EveControlPanel.pdb
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\bin\Debug\EveControlPanel.exe
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\bin\Debug\EveControlPanel.pdb
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\bin\Debug\MySql.Data.dll
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\obj\x86\Debug\EveControlPanelApplication.acctEditForm.resources
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\obj\x86\Debug\EveControlPanelApplication.mySqlLogin.resources
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\obj\x86\Debug\EveControlPanelApplication.Main.resources
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\obj\x86\Debug\EveControlPanelApplication.Properties.Resources.resources
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\GooMan\Desktop\RPG\newest\evemu_control_panel_v2.0\evemu_control_panel_v2.0\obj\x86\Debug\GenerateResource.write.1.tlog
