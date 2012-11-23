@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace EveControlPanelApplication
         {
             mySqlLogin dlg = new mySqlLogin();
             dlg.Show();
+        }
+
+        private void clearLoginPrefToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\EvECP\\ecp_config.xml");
+            MessageBox.Show("The config is now cleared!", "Config cleared!", MessageBoxButtons.OK);
         }
 
         private void accountManagmentButton_Click(object sender, EventArgs e)
@@ -45,7 +52,21 @@ namespace EveControlPanelApplication
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("EveCP Copyright by EveProject\nProjectpage: https://github.com/evemuproject\nWebsite: http://evemu.org\n\nDevelopers:\n\nReveMu\nHurracane\nMurdockGT\nGooMan", "About EveCP", MessageBoxButtons.OK);
+            //MessageBox.Show("EveCP Copyright by EveProject\nProjectpage: https://github.com/evemuproject\nWebsite: http://evemu.org\n\nDevelopers:\n\nReveMu\nHurracane\nMurdockGT\nGooMan", "About EveCP", MessageBoxButtons.OK);
+            About aboutForm = new About();
+            aboutForm.Show();
+        }
+
+        private void editPathsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Serverinfo serverForm = new Serverinfo();
+            serverForm.Show();
+        }
+
+        private void clearPathsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\EvECP\\ecp_paths.xml");
+            MessageBox.Show("The paths are now cleared!", "Paths cleared!", MessageBoxButtons.OK);
         }
     }
 }

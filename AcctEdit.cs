@@ -133,6 +133,17 @@ namespace EveControlPanelApplication
             textBox2.Enabled = false;
             textBox1.Text = "";
             comboBox1.SelectedItem = "";
+
+            MessageBox.Show("The edit was successull written to the database!", "Successfull!", MessageBoxButtons.OK);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            groupBox3.Visible = false;
+            textBox2.Text = "";
+            textBox2.Enabled = false;
+            textBox1.Text = "";
+            comboBox1.SelectedItem = "";
         }
     }
 }

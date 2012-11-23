@@ -50,6 +50,9 @@
             this.itemEditorButton = new System.Windows.Forms.Button();
             this.marketManagmentButton = new System.Windows.Forms.Button();
             this.accountManagmentButton = new System.Windows.Forms.Button();
+            this.serverconfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editPathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearPathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.featuresGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +71,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.serverconfigToolStripMenuItem,
             this.optionsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -95,6 +99,7 @@
             this.clearLoginPrefToolStripMenuItem.Name = "clearLoginPrefToolStripMenuItem";
             this.clearLoginPrefToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.clearLoginPrefToolStripMenuItem.Text = "Clear Login Pref";
+            this.clearLoginPrefToolStripMenuItem.Click += new System.EventHandler(this.clearLoginPrefToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -248,6 +253,29 @@
             this.accountManagmentButton.UseVisualStyleBackColor = true;
             this.accountManagmentButton.Click += new System.EventHandler(this.accountManagmentButton_Click);
             // 
+            // serverconfigToolStripMenuItem
+            // 
+            this.serverconfigToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editPathsToolStripMenuItem,
+            this.clearPathsToolStripMenuItem});
+            this.serverconfigToolStripMenuItem.Name = "serverconfigToolStripMenuItem";
+            this.serverconfigToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.serverconfigToolStripMenuItem.Text = "Serverconfig";
+            // 
+            // editPathsToolStripMenuItem
+            // 
+            this.editPathsToolStripMenuItem.Name = "editPathsToolStripMenuItem";
+            this.editPathsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editPathsToolStripMenuItem.Text = "Edit paths";
+            this.editPathsToolStripMenuItem.Click += new System.EventHandler(this.editPathsToolStripMenuItem_Click);
+            // 
+            // clearPathsToolStripMenuItem
+            // 
+            this.clearPathsToolStripMenuItem.Name = "clearPathsToolStripMenuItem";
+            this.clearPathsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearPathsToolStripMenuItem.Text = "Clear paths";
+            this.clearPathsToolStripMenuItem.Click += new System.EventHandler(this.clearPathsToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +317,9 @@
         private System.Windows.Forms.Button databaseFunctionsButton;
         private System.Windows.Forms.Button stuffEditorButton;
         private System.Windows.Forms.Button charEditButton;
+        private System.Windows.Forms.ToolStripMenuItem serverconfigToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editPathsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearPathsToolStripMenuItem;
     }
 }
 
