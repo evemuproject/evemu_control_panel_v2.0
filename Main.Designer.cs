@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +50,9 @@
             this.itemEditorButton = new System.Windows.Forms.Button();
             this.marketManagmentButton = new System.Windows.Forms.Button();
             this.accountManagmentButton = new System.Windows.Forms.Button();
+            this.serverconfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editPathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearPathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.featuresGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +71,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.serverconfigToolStripMenuItem,
             this.optionsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -79,7 +84,7 @@
             this.loginPrefToolStripMenuItem,
             this.clearLoginPrefToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.optionsToolStripMenuItem.Text = "MySql Login";
             // 
             // loginPrefToolStripMenuItem
@@ -94,11 +99,12 @@
             this.clearLoginPrefToolStripMenuItem.Name = "clearLoginPrefToolStripMenuItem";
             this.clearLoginPrefToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.clearLoginPrefToolStripMenuItem.Text = "Clear Login Pref";
+            this.clearLoginPrefToolStripMenuItem.Click += new System.EventHandler(this.clearLoginPrefToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // aboutToolStripMenuItem
@@ -112,7 +118,7 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -247,6 +253,29 @@
             this.accountManagmentButton.UseVisualStyleBackColor = true;
             this.accountManagmentButton.Click += new System.EventHandler(this.accountManagmentButton_Click);
             // 
+            // serverconfigToolStripMenuItem
+            // 
+            this.serverconfigToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editPathsToolStripMenuItem,
+            this.clearPathsToolStripMenuItem});
+            this.serverconfigToolStripMenuItem.Name = "serverconfigToolStripMenuItem";
+            this.serverconfigToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.serverconfigToolStripMenuItem.Text = "Serverconfig";
+            // 
+            // editPathsToolStripMenuItem
+            // 
+            this.editPathsToolStripMenuItem.Name = "editPathsToolStripMenuItem";
+            this.editPathsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editPathsToolStripMenuItem.Text = "Edit paths";
+            this.editPathsToolStripMenuItem.Click += new System.EventHandler(this.editPathsToolStripMenuItem_Click);
+            // 
+            // clearPathsToolStripMenuItem
+            // 
+            this.clearPathsToolStripMenuItem.Name = "clearPathsToolStripMenuItem";
+            this.clearPathsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearPathsToolStripMenuItem.Text = "Clear paths";
+            this.clearPathsToolStripMenuItem.Click += new System.EventHandler(this.clearPathsToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +283,7 @@
             this.ClientSize = new System.Drawing.Size(352, 257);
             this.Controls.Add(this.featuresGroupBox);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Eve Control Panel";
@@ -287,6 +317,9 @@
         private System.Windows.Forms.Button databaseFunctionsButton;
         private System.Windows.Forms.Button stuffEditorButton;
         private System.Windows.Forms.Button charEditButton;
+        private System.Windows.Forms.ToolStripMenuItem serverconfigToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editPathsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearPathsToolStripMenuItem;
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mySqlLogin));
             this.loginInfoBox = new System.Windows.Forms.GroupBox();
             this.testConnectionButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -193,6 +194,7 @@
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(218, 242);
             this.Controls.Add(this.loginInfoBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mySqlLogin";
             this.Text = "MySql Login Information";
             this.loginInfoBox.ResumeLayout(false);
